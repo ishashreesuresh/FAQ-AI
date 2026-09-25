@@ -1,0 +1,6 @@
+{
+  "name": "NexaFAQ AI — Intelligent FAQ Assistant",
+  "description": "Intelligent FAQ Assistant powered by real NLP preprocessing, TF-IDF vectorization, and Cosine Similarity matching for CodeAlpha AI Internship Task 2.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

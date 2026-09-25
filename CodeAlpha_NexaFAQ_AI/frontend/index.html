@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaFAQ AI — Intelligent FAQ Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar for Navigation & History -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <span class="brand-name">NexaFAQ AI</span>
+        </div>
+        <button id="themeToggleBtn" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="sidebar-section">
+        <div class="section-title">Knowledge Domain</div>
+        <div class="category-list" id="categoryList">
+          <button class="cat-pill active" data-category="All">All Topics</button>
+          <button class="cat-pill" data-category="Login & Security">Login & Security</button>
+          <button class="cat-pill" data-category="Account">Account</button>
+          <button class="cat-pill" data-category="Profile">Profile</button>
+          <button class="cat-pill" data-category="Billing & Payments">Billing & Payments</button>
+          <button class="cat-pill" data-category="Subscription">Subscription</button>
+          <button class="cat-pill" data-category="Orders">Orders</button>
+          <button class="cat-pill" data-category="Technical Support">Technical Support</button>
+          <button class="cat-pill" data-category="Notifications">Notifications</button>
+          <button class="cat-pill" data-category="Privacy">Privacy</button>
+          <button class="cat-pill" data-category="General Support">General Support</button>
+        </div>
+      </div>
+
+      <!-- History Section -->
+      <div class="sidebar-section flex-grow">
+        <div class="section-header-row">
+          <div class="section-title">Recent Questions</div>
+          <button id="clearHistoryBtn" class="text-action-btn" title="Clear search history">Clear</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <div class="empty-state">No recent queries yet</div>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="sidebar-footer">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span>Local NLP Engine Ready</span>
+        </div>
+        <div class="internship-tag">CodeAlpha AI Task 2</div>
+      </div>
+    </aside>
+
+    <!-- Main Chat Workspace -->
+    <main class="chat-workspace">
+      <!-- Top Bar -->
+      <header class="chat-header">
+        <div class="header-left">
+          <button id="toggleSidebarBtn" class="icon-btn mobile-only" aria-label="Toggle Sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div>
+            <h1 class="header-title">NexaFAQ AI</h1>
+            <p class="header-subtitle">Intelligent FAQ Assistant · Ask naturally. Find the right answer instantly.</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button id="clearChatBtn" class="ghost-btn" title="Clear current chat">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            <span>Clear Chat</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Messages Scroll Area -->
+      <div class="chat-scroll-area" id="chatScrollArea">
+        <div class="chat-container" id="chatContainer">
+          <!-- AI Welcome Card -->
+          <div class="message ai-message welcome-message">
+            <div class="message-avatar">
+              <span>N</span>
+            </div>
+            <div class="message-content">
+              <div class="welcome-heading">Welcome to NexaFAQ AI</div>
+              <p class="message-text">Hi! I'm NexaFAQ AI. Ask me anything about the platform, account, billing, support, or security.</p>
+              
+              <div class="prompt-suggestions-wrapper">
+                <div class="suggestions-label">Suggested Questions</div>
+                <div class="suggestions-grid" id="welcomeSuggestions">
+                  <button class="suggest-btn" data-query="How do I reset my password?">How do I reset my password?</button>
+                  <button class="suggest-btn" data-query="How can I change my email?">How can I change my email?</button>
+                  <button class="suggest-btn" data-query="Where can I view my billing details?">Where can I view my billing details?</button>
+                  <button class="suggest-btn" data-query="How do I cancel my subscription?">How do I cancel my subscription?</button>
+                  <button class="suggest-btn" data-query="How can I contact support?">How can I contact support?</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input Area -->
+      <div class="chat-input-wrapper">
+        <form class="chat-input-card" id="chatForm">
+          <textarea
+            id="chatInput"
+            placeholder="Ask a question in plain English (e.g. 'I forgot my password' or 'How do I download invoices?')..."
+            rows="1"
+            maxlength="600"
+            aria-label="Ask your question"
+          ></textarea>
+          <div class="input-actions">
+            <div class="active-category-indicator" id="activeCategoryBadge">
+              Filtering: <strong>All</strong>
+            </div>
+            <div class="input-btns">
+              <button type="submit" id="sendBtn" class="send-btn" aria-label="Send Message" title="Send question">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="input-footer-hint">
+          <span>Press <strong>Enter</strong> to send, <strong>Shift + Enter</strong> for a new line</span>
+          <span>TF-IDF + Cosine Similarity matching</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+export interface FAQItem {
+  id: number;
+  category: string;
+  question: string;
+  answer: string;
+  keywords: string[];
+}
+
+export const FAQS_DATA: FAQItem[] = [
+  {
+    id: 1,
+    category: "Login & Security",
+    question: "How can I reset my password?",
+    answer: "Open Settings, select Security, choose Reset Password, and follow the verification steps sent to your registered email address.",
+    keywords: ["password", "reset", "forgot", "login", "recover", "credentials", "security", "forgot password", "reset password", "account access", "access account", "unlock", "regain access"]
+  },
+  {
+    id: 2,
+    category: "Login & Security",
+    question: "I forgot my password and cannot sign in. How do I recover it?",
+    answer: "Click the 'Forgot Password' link on the sign-in screen, enter your registered email address, and follow the password reset link sent to your inbox.",
+    keywords: ["forgot", "password", "sign in", "login", "recover", "locked out", "forgot password", "access account", "account access", "cant sign in", "reset password", "regain access"]
+  },
+  {
+    id: 3,
+    category: "Login & Security",
+    question: "I can't log into my account. What should I do?",
+    answer: "Check your internet connection, verify your email and password casing, ensure two-factor authentication codes are fresh, or use the 'Forgot Password' recovery option.",
+    keywords: ["cant log in", "cant login", "cannot login", "trouble signing in", "access", "locked", "signin failed", "log in", "login", "sign in", "account access", "access account", "login failed", "login issue"]
+  },
+  {
+    id: 4,
+    category: "Login & Security",
+    question: "How do I enable two-factor authentication (2FA)?",
+    answer: "Go to Account Settings → Security → Two-Factor Authentication, choose Authenticator App or SMS, scan the QR code with your authenticator app, and enter the 6-digit confirmation code.",
+    keywords: ["2fa", "two-factor", "mfa", "authenticator", "otp", "security code"]
+  },
+  {
+    id: 5,
+    category: "Login & Security",
+    question: "How do I view and revoke active login sessions?",
+    answer: "Navigate to Settings → Security → Active Devices & Sessions. You can view all logged-in devices with location and IP, and click 'Sign Out All Other Sessions' to terminate them.",
+    keywords: ["session", "devices", "active logins", "revoke", "sign out everywhere", "hack"]
+  },
+  {
+    id: 6,
+    category: "Profile",
+    question: "Can I change my profile information?",
+    answer: "Yes. Navigate to Settings → Profile to update your display name, title, bio, location, time zone, and profile avatar image.",
+    keywords: ["profile", "information", "bio", "name", "avatar", "photo", "edit details"]
+  },
+  {
+    id: 7,
+    category: "Profile",
+    question: "Can I change my email address?",
+    answer: "Yes. Go to Account Settings → Profile → Email Address, enter your new email, and verify it via the confirmation link sent to your new mailbox.",
+    keywords: ["email", "change email", "update email", "new address", "modify email"]
+  },
+  {
+    id: 8,
+    category: "Profile",
+    question: "How do I upload or update my profile photo?",
+    answer: "Go to Settings → Profile, click on your current avatar, upload an image in JPG, PNG, or WebP format (max 5MB), crop if needed, and save.",
+    keywords: ["photo", "picture", "avatar", "upload image", "change picture"]
+  },
+  {
+    id: 9,
+    category: "Profile",
+    question: "How do I change my display language or time zone?",
+    answer: "Open Settings → Preferences → Localization, select your preferred language from the dropdown menu, choose your local time zone, and click Save Changes.",
+    keywords: ["language", "time zone", "locale", "regional", "translation"]
+  },
+  {
+    id: 10,
+    category: "Account",
+    "question": "How do I create a new account?",
+    answer: "Click 'Sign Up' on the top navigation bar, enter your work or personal email, create a secure password, and verify your account via the activation link.",
+    keywords: ["create account", "register", "sign up", "new user", "join"]
+  },
+  {
+    id: 11,
+    category: "Account",
+    question: "How do I delete or close my account?",
+    answer: "Visit Settings → Account Management → Danger Zone, click 'Delete Account', type your password to confirm, and submit. Your account will enter a 14-day grace period before permanent deletion.",
+    keywords: ["delete account", "close account", "terminate", "remove account", "erase account"]
+  },
+  {
+    id: 12,
+    category: "Account",
+    question: "Can I merge two separate accounts?",
+    answer: "Direct automated account merging is not available for security reasons. Please reach out to Support with proof of ownership for both email addresses to assist you.",
+    keywords: ["merge accounts", "combine", "multiple accounts", "transfer data"]
+  },
+  {
+    id: 13,
+    category: "Account",
+    question: "How do I invite team members to my organization account?",
+    answer: "Team administrators can go to Organization Settings → Members → Invite, enter teammate email addresses, assign roles (Admin, Editor, Viewer), and send invites.",
+    keywords: ["team", "invite", "organization", "members", "add user", "role"]
+  },
+  {
+    id: 14,
+    category: "Billing & Payments",
+    question: "Where can I see my payment details?",
+    answer: "Go to Settings → Billing & Invoices to view saved credit cards, default payment methods, billing address, and transaction histories.",
+    keywords: ["payment details", "credit card", "billing info", "cards", "bank details", "see payment"]
+  },
+  {
+    id: 15,
+    category: "Billing & Payments",
+    question: "How do I download invoices or receipts for tax purposes?",
+    answer: "In Settings → Billing & Invoices, scroll to Invoice History where each invoice has a direct 'Download PDF' link complete with VAT/tax breakdowns.",
+    keywords: ["invoice", "receipt", "tax", "download pdf", "billing history", "statement"]
+  },
+  {
+    id: 16,
+    category: "Billing & Payments",
+    question: "What payment methods are supported?",
+    answer: "We accept major credit/debit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, Google Pay, and SEPA/Wire transfers for Enterprise plans.",
+    keywords: ["payment methods", "visa", "mastercard", "paypal", "apple pay", "wire"]
+  },
+  {
+    id: 17,
+    category: "Billing & Payments",
+    question: "How do I update my credit card information?",
+    answer: "Navigate to Settings → Billing & Invoices → Payment Methods, click 'Add New Card', set it as your default payment method, and remove expired cards.",
+    keywords: ["update card", "expired card", "change credit card", "new payment method"]
+  },
+  {
+    id: 18,
+    category: "Billing & Payments",
+    question: "Why was my payment declined?",
+    answer: "Payments usually fail due to insufficient funds, international card transaction blocks, expired cards, or 3D-Secure bank verification timeouts. Check with your issuing bank or try another card.",
+    keywords: ["payment declined", "card failed", "payment error", "billing failure", "declined"]
+  },
+  {
+    id: 19,
+    category: "Subscription",
+    question: "How do I cancel my subscription?",
+    answer: "To cancel your subscription, go to Settings → Billing → Subscription Plan, click 'Cancel Subscription', select a reason, and confirm. You retain access until the end of your billing cycle.",
+    keywords: ["cancel subscription", "stop plan", "downgrade", "end subscription", "cancel membership"]
+  },
+  {
+    id: 20,
+    category: "Subscription",
+    question: "Can I upgrade or downgrade my subscription plan at any time?",
+    answer: "Yes. Visit Settings → Subscription Plans and select your desired tier. Upgrades take effect immediately with prorated billing; downgrades take effect at the start of your next billing period.",
+    keywords: ["upgrade plan", "downgrade tier", "switch plan", "prorated", "change plan"]
+  },
+  {
+    id: 21,
+    category: "Subscription",
+    question: "Is there a free trial available?",
+    answer: "Yes! All new accounts include a 14-day free trial of our Pro plan with no credit card required at registration.",
+    keywords: ["free trial", "test period", "trial days", "demo period", "free tier"]
+  },
+  {
+    id: 22,
+    category: "Subscription",
+    question: "What happens when my subscription trial ends?",
+    answer: "When the trial ends without an active payment method, your account transitions to the Free Starter tier. Your data remains safe and accessible with standard limits.",
+    keywords: ["trial expired", "trial end", "starter tier", "downgrade after trial"]
+  },
+  {
+    id: 23,
+    category: "Subscription",
+    question: "Do you offer annual discounts or student pricing?",
+    answer: "Yes, annual billing includes a 20% discount compared to monthly plans. We also offer 50% discounts for verified students, educators, and registered non-profit organizations.",
+    keywords: ["annual discount", "yearly plan", "student discount", "education", "non-profit"]
+  },
+  {
+    id: 24,
+    category: "Orders",
+    question: "Where can I view my recent order history and status?",
+    answer: "Go to Account → Order History to view all past and pending orders, track shipments in real time, and view order receipts.",
+    keywords: ["order history", "track order", "purchases", "order status", "shipment"]
+  },
+  {
+    id: 25,
+    category: "Orders",
+    question: "How do I request a refund for a purchase?",
+    answer: "Refund requests can be submitted within 30 days of purchase through Orders → Select Order → Request Refund, or by contacting our billing team at billing@nexafaq.ai.",
+    keywords: ["refund", "money back", "return", "chargeback", "refund policy"]
+  },
+  {
+    id: 26,
+    category: "Orders",
+    question: "Can I change the delivery or shipping address on an active order?",
+    answer: "If your order has not entered the fulfillment stage, you can modify the shipping address in Orders → Order Details → Edit Address. Once shipped, contact the carrier directly.",
+    keywords: ["shipping address", "delivery location", "change address", "change order"]
+  },
+  {
+    id: 27,
+    category: "Notifications",
+    question: "How do I update my notification settings?",
+    answer: "Go to Settings → Notifications to customize your email alerts, in-app badges, browser push notifications, and weekly summary digest preferences.",
+    keywords: ["notification settings", "email alerts", "push notifications", "unsubscribe", "digest", "updates", "notification", "notifications", "settings", "change notification settings", "update notifications", "change notifications", "preferences", "alert settings"]
+  },
+  {
+    id: 28,
+    category: "Notifications",
+    question: "How do I unsubscribe from marketing and newsletter emails?",
+    answer: "Click the 'Unsubscribe' link at the bottom of any promotional email, or turn off 'Marketing Communications' under Settings → Notifications.",
+    keywords: ["unsubscribe", "stop emails", "newsletter", "marketing emails", "spam"]
+  },
+  {
+    id: 29,
+    category: "Notifications",
+    question: "Why am I not receiving email notifications or verification codes?",
+    answer: "First check your spam/junk folder and corporate filters. Ensure notifications@nexafaq.ai is whitelisted, or verify your email address under Profile Settings.",
+    keywords: ["not receiving email", "missing code", "spam folder", "no email", "verification delay"]
+  },
+  {
+    id: 30,
+    category: "Privacy",
+    question: "What happens to my data?",
+    answer: "Your data is encrypted at rest using AES-256 and in transit via TLS 1.3. We never sell your personal information or use your proprietary content to train third-party public models.",
+    keywords: ["what happens to my data", "data privacy", "encryption", "data security", "data retention", "storage", "personal data", "user data", "privacy", "personal information", "data protection", "stored data", "data usage"]
+  },
+  {
+    id: 31,
+    category: "Privacy",
+    question: "How can I export a copy of all my personal data?",
+    answer: "Under Settings → Privacy & Security, click 'Export Personal Data'. A secure zip archive containing your activity logs, profile details, and data will be emailed within 24 hours.",
+    keywords: ["export data", "download data", "gdpr export", "takeout", "data copy"]
+  },
+  {
+    id: 32,
+    category: "Privacy",
+    question: "Is NexaFAQ compliant with GDPR, CCPA, and SOC 2?",
+    answer: "Yes. NexaFAQ is fully compliant with GDPR and CCPA requirements and maintains SOC 2 Type II certification with annual independent third-party audits.",
+    keywords: ["gdpr", "ccpa", "soc 2", "compliance", "regulatory", "privacy policy"]
+  },
+  {
+    id: 33,
+    category: "Privacy",
+    question: "How do I manage cookie preferences and tracking?",
+    answer: "Click 'Cookie Preferences' in the website footer or navigate to Settings → Privacy → Cookies to toggle analytical, performance, and marketing cookie consents.",
+    keywords: ["cookies", "tracking", "cookie banner", "opt-out", "analytics consent"]
+  },
+  {
+    id: 34,
+    category: "Technical Support",
+    question: "How do I contact support?",
+    answer: "You can contact our support team via live chat in the bottom right corner, by email at support@nexafaq.ai, or submit a support ticket in Help Center → New Ticket.",
+    keywords: ["contact support", "helpdesk", "reach support", "customer care", "email support", "agent", "support", "customer support", "contact customer support", "help", "contact", "assistance", "support team"]
+  },
+  {
+    id: 35,
+    category: "Technical Support",
+    question: "What are your customer support operating hours?",
+    answer: "Our standard support team operates Monday through Friday, 8:00 AM – 8:00 PM EST. Premium and Enterprise customers receive 24/7/365 emergency incident assistance.",
+    keywords: ["support hours", "operating hours", "business hours", "24/7 support", "availability"]
+  },
+  {
+    id: 36,
+    category: "Technical Support",
+    question: "What browsers and operating systems are supported?",
+    answer: "NexaFAQ supports modern versions of Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge across Windows, macOS, Linux, iOS, and Android.",
+    keywords: ["supported browsers", "chrome", "safari", "firefox", "edge", "operating system"]
+  },
+  {
+    id: 37,
+    category: "Technical Support",
+    question: "What should I do if the app fails to load or shows a blank screen?",
+    answer: "Try doing a hard refresh (Ctrl+F5 or Cmd+Shift+R), clear browser cookies and cache, disable intrusive browser extensions or ad blockers, or try incognito mode.",
+    keywords: ["blank screen", "app not loading", "refresh", "cache", "crashing", "white screen"]
+  },
+  {
+    id: 38,
+    category: "Technical Support",
+    question: "How do I report a software bug or security vulnerability?",
+    answer: "Please report bugs through Help Center → Report an Issue. For security vulnerabilities, submit your findings to security@nexafaq.ai under our responsible disclosure program.",
+    keywords: ["report bug", "issue", "security vulnerability", "glitch", "defect", "responsible disclosure"]
+  },
+  {
+    id: 39,
+    category: "Technical Support",
+    question: "Where can I check system uptime and service outages?",
+    answer: "Visit our public status dashboard at status.nexafaq.ai to check live uptime metrics, scheduled maintenance windows, and historical incident logs.",
+    keywords: ["system uptime", "status page", "service outage", "downtime", "maintenance", "server down"]
+  },
+  {
+    id: 40,
+    category: "General Support",
+    question: "What is NexaFAQ AI and how does it work?",
+    answer: "NexaFAQ AI is an intelligent knowledge retrieval assistant that uses Natural Language Processing (NLP), TF-IDF vectorization, and Cosine Similarity to provide instantaneous, accurate answers to questions.",
+    keywords: ["what is nexafaq", "about", "how it works", "overview", "nlp assistant"]
+  },
+  {
+    id: 41,
+    category: "General Support",
+    question: "Does NexaFAQ require an active internet connection to answer FAQs?",
+    answer: "The core NLP preprocessing and TF-IDF similarity matching engine runs locally on the application server and requires no external third-party API or paid external cloud AI calls.",
+    keywords: ["offline", "local nlp", "no api key", "internet connection", "standalone"]
+  },
+  {
+    id: 42,
+    category: "General Support",
+    question: "Can I integrate NexaFAQ with our existing CRM or Slack workspace?",
+    answer: "Yes! NexaFAQ offers RESTful webhooks and official integrations with Slack, Microsoft Teams, Zendesk, and Discord for automated helpdesk assistance.",
+    keywords: ["integration", "slack", "crm", "zendesk", "teams", "webhook"]
+  },
+  {
+    id: 43,
+    category: "General Support",
+    question: "How can I suggest a new feature or improvement?",
+    answer: "We welcome customer feedback! Visit our Community Roadmap board at feedback.nexafaq.ai to vote on planned features and submit your own ideas.",
+    keywords: ["feature request", "suggest feature", "feedback", "roadmap", "ideas"]
+  },
+  {
+    id: 44,
+    category: "Technical Support",
+    question: "Where can I find API documentation and developer SDKs?",
+    answer: "Visit docs.nexafaq.ai to access our OpenAPI 3.0 specifications, interactive Swagger playground, code snippets in Python, Node.js, and curl, and client SDKs.",
+    keywords: ["api documentation", "developer sdk", "endpoints", "swagger", "openapi", "rest api"]
+  },
+  {
+    id: 45,
+    category: "Technical Support",
+    question: "What are the rate limits for the developer API?",
+    answer: "Starter plans include 60 requests per minute. Pro tiers allow 600 requests per minute, and Enterprise accounts enjoy custom rate limits with dedicated burst capacity.",
+    keywords: ["rate limit", "api limits", "throttle", "quota", "requests per minute"]
+  },
+  {
+    id: 46,
+    category: "Login & Security",
+    question: "Can I use Single Sign-On (SSO) with Google, GitHub, or Okta?",
+    answer: "Yes. Individual users can log in with Google and GitHub. Enterprise plans support SAML 2.0 and OIDC Single Sign-On (SSO) with Okta, Azure AD, PingIdentity, and OneLogin.",
+    keywords: ["sso", "single sign-on", "saml", "okta", "google login", "azure ad"]
+  },
+  {
+    id: 47,
+    category: "Login & Security",
+    question: "What password complexity requirements are enforced?",
+    answer: "Passwords must be at least 10 characters long, include both uppercase and lowercase letters, at least one digit, and one special character, and must not match common breach databases.",
+    keywords: ["password requirements", "password strength", "complexity", "length", "special characters"]
+  },
+  {
+    id: 48,
+    category: "Account",
+    question: "Can I transfer organization ownership to another user?",
+    answer: "Yes. The current primary owner can navigate to Organization Settings → Ownership, select an existing administrator from the roster, and confirm the ownership transfer.",
+    keywords: ["transfer ownership", "primary owner", "change admin", "transfer organization"]
+  },
+  {
+    id: 49,
+    category: "Billing & Payments",
+    question: "Do you accept purchase orders (PO) or invoice-based wire payments?",
+    answer: "Yes. Invoice-based net-30 payment terms and Purchase Orders (PO) are available for Enterprise annual contracts with $2,000+ commitment.",
+    keywords: ["purchase order", "po", "wire payment", "net-30", "invoice billing", "bank transfer"]
+  },
+  {
+    id: 50,
+    category: "General Support",
+    question: "Where can I read the Terms of Service and End User License Agreement?",
+    answer: "You can review our Terms of Service, Acceptable Use Policy, and EULA anytime at nexafaq.ai/terms or through the link located in the site footer.",
+    keywords: ["terms of service", "tos", "eula", "legal", "terms and conditions", "license agreement"]
+  },
+  {
+    id: 51,
+    category: "Technical Support",
+    question: "How do I generate an API key for my application?",
+    answer: "Go to Developer Portal → API Keys, click 'Generate New Key', select the appropriate read/write scopes, and copy the secret key immediately into your secure vault.",
+    keywords: ["api key", "generate key", "token", "developer token", "secret key"]
+  },
+  {
+    id: 52,
+    category: "Privacy",
+    question: "Where are your cloud servers located and what data residency options exist?",
+    answer: "Our primary infrastructure is hosted in AWS us-east-1 and eu-central-1 (Frankfurt). Enterprise clients can select regional data residency in the EU, US, UK, or APAC.",
+    keywords: ["server location", "data residency", "aws", "frankfurt", "hosting location", "datacenter"]
+  },
+  {
+    id: 53,
+    category: "Notifications",
+    question: "Can I receive real-time webhook notifications for account events?",
+    answer: "Yes. Configure webhook endpoints under Settings → Developer → Webhooks. We deliver signed JSON payloads with HMAC-SHA256 signatures for account, billing, and security events.",
+    keywords: ["webhooks", "webhook events", "real-time events", "hmac signature", "callback"]
+  },
+  {
+    id: 54,
+    category: "Orders",
+    question: "What should I do if an ordered item arrives damaged or incomplete?",
+    answer: "Please submit a photo of the damaged package and contents via Orders → Order Issue within 7 days of delivery. We will issue an expedited replacement at no extra charge.",
+    keywords: ["damaged item", "broken package", "missing items", "order issue", "replacement"]
+  },
+  {
+    id: 55,
+    category: "General Support",
+    question: "How do I provide feedback on an answer from NexaFAQ AI?",
+    answer: "Use the thumbs up or thumbs down buttons below any response, or click 'Why this answer?' to inspect the underlying NLP similarity score and category classification.",
+    keywords: ["feedback", "thumbs up", "rating", "rate answer", "helpful", "accuracy"]
+  }
+];

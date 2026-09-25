@@ -1,0 +1,549 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 133, 123, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 133, 123, 0.4);
+}
+
+/* ========================================================
+   NexaFAQ AI - Micro-Interaction Emoji Reaction Animations
+   Individual natural physics animations tailored to each emoji.
+   Plays once upon entrance with elegant easing, then settles.
+   ======================================================== */
+
+/* 1. 🔐 SECURITY / PASSWORD */
+@keyframes emoji-lock-react {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(5px) rotate(-8deg);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.18) translateY(-3px) rotate(4deg);
+  }
+  65% {
+    transform: scale(0.95) translateY(1px) rotate(-2deg);
+  }
+  85% {
+    transform: scale(1.05) translateY(-0.5px) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+}
+
+.emoji-reaction-lock {
+  display: inline-block;
+  transform-origin: center bottom;
+  animation: emoji-lock-react 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 2. 👤 PROFILE / USER */
+@keyframes emoji-profile-react {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(4px);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.16) translateY(-3px) translateX(-2px);
+  }
+  60% {
+    transform: scale(0.96) translateY(0.5px) translateX(2px);
+  }
+  82% {
+    transform: scale(1.04) translateY(-1px) translateX(-0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) translateX(0);
+  }
+}
+
+.emoji-reaction-profile {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-profile-react 620ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 3. 💳 BILLING & PAYMENTS */
+@keyframes emoji-payment-react {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.7) rotate(-8deg);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(3px) scale(1.14) rotate(4deg);
+  }
+  65% {
+    transform: translateX(-1px) scale(0.96) rotate(-2deg);
+  }
+  85% {
+    transform: translateX(0.5px) scale(1.03) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
+}
+
+.emoji-reaction-payment {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-payment-react 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 4. 📦 ORDERS & SHIPPING */
+@keyframes emoji-order-react {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.75) rotate(-5deg);
+  }
+  45% {
+    opacity: 1;
+    transform: translateY(2px) scale(1.16) rotate(3deg);
+  }
+  70% {
+    transform: translateY(-1.5px) scale(0.96) rotate(-1.5deg);
+  }
+  88% {
+    transform: translateY(0.5px) scale(1.03) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+.emoji-reaction-order {
+  display: inline-block;
+  transform-origin: center bottom;
+  animation: emoji-order-react 620ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 5. 🔔 NOTIFICATIONS */
+@keyframes emoji-bell-swing {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.12) rotate(-24deg);
+  }
+  42% {
+    transform: scale(1.02) rotate(20deg);
+  }
+  64% {
+    transform: scale(0.98) rotate(-11deg);
+  }
+  82% {
+    transform: scale(1.01) rotate(5deg);
+  }
+  93% {
+    transform: scale(1) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.emoji-reaction-bell {
+  display: inline-block;
+  transform-origin: top center;
+  animation: emoji-bell-swing 850ms cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 6. 🛠️ TECHNICAL SUPPORT */
+@keyframes emoji-tools-react {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-28deg);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.22) rotate(16deg);
+  }
+  65% {
+    transform: scale(0.94) rotate(-8deg);
+  }
+  85% {
+    transform: scale(1.05) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.emoji-reaction-tools {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-tools-react 650ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 7. 🛡️ PRIVACY / SECURITY */
+@keyframes emoji-shield-react {
+  0% {
+    opacity: 0;
+    transform: scale(0.55) translateY(4px);
+  }
+  38% {
+    opacity: 1;
+    transform: scale(1.22) translateY(-3px);
+  }
+  65% {
+    transform: scale(0.95) translateY(1px);
+  }
+  85% {
+    transform: scale(1.04) translateY(-0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.emoji-reaction-shield {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-shield-react 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 8. ⚙️ SETTINGS / ACCOUNT */
+@keyframes emoji-gear-rotate {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(0deg);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.15) rotate(180deg);
+  }
+  70% {
+    transform: scale(0.97) rotate(335deg);
+  }
+  88% {
+    transform: scale(1.03) rotate(365deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.emoji-reaction-gear {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-gear-rotate 800ms cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 9. 💡 GENERAL INFORMATION */
+@keyframes emoji-bulb-react {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(6px);
+    filter: drop-shadow(0 0 0px rgba(245, 158, 11, 0));
+  }
+  42% {
+    opacity: 1;
+    transform: scale(1.24) translateY(-4px);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));
+  }
+  68% {
+    transform: scale(0.94) translateY(1px);
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+  }
+  86% {
+    transform: scale(1.05) translateY(-1px);
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.3));
+  }
+}
+
+.emoji-reaction-bulb {
+  display: inline-block;
+  transform-origin: center bottom;
+  animation: emoji-bulb-react 700ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity, filter;
+}
+
+/* 10. ✨ WELCOME & POSITIVE */
+@keyframes emoji-sparkle-react {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-22deg);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.28) rotate(16deg);
+  }
+  68% {
+    transform: scale(0.92) rotate(-6deg);
+  }
+  86% {
+    transform: scale(1.06) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.emoji-reaction-sparkle {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-sparkle-react 650ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 11. 🎉 SUCCESS / VERIFIED MATCH */
+@keyframes emoji-success-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.55) rotate(-14deg);
+  }
+  42% {
+    opacity: 1;
+    transform: scale(1.22) rotate(10deg);
+  }
+  68% {
+    transform: scale(0.93) rotate(-4deg);
+  }
+  86% {
+    transform: scale(1.06) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.emoji-reaction-success {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-success-entrance 580ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 12. 😕 NO RELIABLE MATCH (Custom Multi-Layer Animated Micro-Interaction) */
+@keyframes confusedReaction {
+  0% {
+    transform: scale(0.5) translateY(8px) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    /* STEP 1: Pop in */
+    transform: scale(1.15) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1) rotate(0deg);
+  }
+  68% {
+    /* STEP 5: Head tilts LEFT */
+    transform: scale(1.02) rotate(-8deg);
+  }
+  80% {
+    /* STEP 6: Head tilts RIGHT */
+    transform: scale(1.02) rotate(7deg);
+  }
+  88% {
+    /* STEP 7: Head returns CENTER */
+    transform: scale(1) rotate(0deg);
+  }
+  94% {
+    /* STEP 8: Small cute bounce */
+    transform: scale(1.08) translateY(-2px) rotate(0deg);
+  }
+  100% {
+    /* STEP 9: Settle */
+    transform: scale(1) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes confusedEyesLook {
+  0%, 20% {
+    transform: translateX(0px);
+  }
+  28%, 40% {
+    /* STEP 2: LOOK LEFT - clearly visible 6px */
+    transform: translateX(-6px);
+  }
+  48%, 60% {
+    /* STEP 3: LOOK RIGHT - clearly visible 6px */
+    transform: translateX(6px);
+  }
+  68%, 100% {
+    /* STEP 4: RETURN CENTER */
+    transform: translateX(0px);
+  }
+}
+
+.confused-face-reaction {
+  transform-origin: center center;
+  animation: confusedReaction 1450ms cubic-bezier(0.34, 1.45, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+.confused-eyes-group {
+  transform-origin: 18px 15.5px;
+  animation: confusedEyesLook 1450ms cubic-bezier(0.45, 0, 0.25, 1) 1 forwards;
+  will-change: transform;
+}
+
+.emoji-reaction-nomatch {
+  display: inline-block;
+  transform-origin: center center;
+  animation: confusedReaction 1450ms cubic-bezier(0.34, 1.45, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 13. 🚨 SYSTEM ERROR */
+@keyframes emoji-error-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.22) translateX(-5px) rotate(-6deg);
+  }
+  45% {
+    transform: scale(1.05) translateX(5px) rotate(6deg);
+  }
+  65% {
+    transform: scale(1.08) translateX(-3px) rotate(-3deg);
+  }
+  82% {
+    transform: scale(0.97) translateX(2px) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0) rotate(0deg);
+  }
+}
+
+.emoji-reaction-error {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-error-entrance 550ms cubic-bezier(0.2, 0.8, 0.2, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 4. BENCHMARK SUCCESS — 🎉 */
+@keyframes emoji-benchmark-celebrate {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-15deg);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.24) rotate(10deg);
+  }
+  65% {
+    transform: scale(0.92) rotate(-4deg);
+  }
+  85% {
+    transform: scale(1.08) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.emoji-reaction-benchmark-success {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-benchmark-celebrate 650ms cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+/* 5. BENCHMARK PARTIAL/FAILURE — ⚠️ */
+@keyframes emoji-benchmark-warning {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.emoji-reaction-benchmark-failure {
+  display: inline-block;
+  transform-origin: center center;
+  animation: emoji-benchmark-warning 450ms cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emoji-reaction-lock,
+  .emoji-reaction-profile,
+  .emoji-reaction-payment,
+  .emoji-reaction-order,
+  .emoji-reaction-bell,
+  .emoji-reaction-tools,
+  .emoji-reaction-shield,
+  .emoji-reaction-gear,
+  .emoji-reaction-bulb,
+  .emoji-reaction-sparkle,
+  .emoji-reaction-success,
+  .emoji-reaction-nomatch,
+  .emoji-reaction-error,
+  .emoji-reaction-benchmark-success,
+  .emoji-reaction-benchmark-failure,
+  .confused-face-reaction,
+  .confused-eyes-group {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
