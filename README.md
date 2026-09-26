@@ -2,31 +2,13 @@
 
 > **CodeAlpha Artificial Intelligence Internship — Task 2: Chatbot for FAQs**
 
-🔗 **Live AI Studio App:** https://nexafaq-ai-intelligent-faq-assistant.ai.studio
+### Live Demo
 
-This repository contains the NexaFAQ AI Intelligent FAQ Assistant project, including the standalone Python/Flask NLP implementation and the interactive web application.
+- **GitHub Pages:** https://ishashreesuresh.github.io/FAQ-AI/
+- **AI Studio:** https://nexafaq-ai-intelligent-faq-assistant.ai.studio
+- **GitHub Repository:** https://github.com/ishashreesuresh/FAQ-AI
 
-## Project Structure
-
-```
-├── CodeAlpha_NexaFAQ_AI/
-│   ├── backend/
-│   │   ├── app.py
-│   │   ├── nlp_engine.py
-│   │   └── requirements.txt
-│   ├── data/
-│   │   └── faqs.json
-│   ├── frontend/
-│   │   ├── index.html
-│   │   ├── style.css
-│   │   └── script.js
-│   ├── README.md
-│   └── .gitignore
-├── src/
-├── data/
-│   └── faqs.json
-└── package.json
-```
+This repository contains the NexaFAQ AI Intelligent FAQ Assistant project and its interactive React/Vite web application.
 
 ## Features
 
@@ -37,29 +19,46 @@ This repository contains the NexaFAQ AI Intelligent FAQ Assistant project, inclu
 - Interactive web interface
 - Dark/light theme support
 - Local browser interaction and project explorer
+- GitHub Pages deployment through GitHub Actions
 
-## Run the Python NLP Version
+## Technology
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
+- Local TF-IDF / cosine-similarity NLP engine
+
+## Run Locally
 
 ```bash
-cd CodeAlpha_NexaFAQ_AI
-python -m venv venv
+npm install
+npm run dev
 ```
 
-### Windows
+For a production build:
 
 ```bash
-.\venv\Scripts\activate
-pip install -r backend/requirements.txt
-python backend/app.py
+npm run build
+npm run preview
 ```
 
-Then open `http://localhost:5000`.
+## GitHub Pages Deployment
 
-## Live Project
+The project is configured for a repository-based GitHub Pages URL:
 
-The deployed/interactive version is available here:
+```
+https://ishashreesuresh.github.io/FAQ-AI/
+```
 
-**https://nexafaq-ai-intelligent-faq-assistant.ai.studio**
+Deployment is handled automatically by:
+
+```
+.github/workflows/deploy-pages.yml
+```
+
+Every push to `main` runs the dependency installation, Vite production build, Pages artifact upload, and GitHub Pages deployment.
 
 ## Verified Test Cases
 
